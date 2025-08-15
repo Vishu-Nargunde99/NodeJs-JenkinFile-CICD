@@ -92,4 +92,23 @@ Here our credential is created
 
 ![project screenshot](/Images/credential.PNG)
 
+## Step 6 : Configure Job 
+
+- Go to created job "NodeJS-Deployment"
+- click on Configure
+
+![project screenshot](/Images/configure.png)
+
+- Scoll down 
+- In trigger section --> check in - GitHub hook trigger GITScm polling 
+- Pipeline  
+    - Definition - Pipeline script from SCM
+        - SCM - Git
+            - Repository - Copy your repository HTTPS where your jenkinfile stored
+            - Branch - main/master (which is your branch name)
+        - Script Path - Change Jenkinsfile To jenkinfile
+- Click on "Save".
+- Click on "Build Now"
+
+
 
