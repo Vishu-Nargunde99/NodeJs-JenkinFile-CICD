@@ -1,9 +1,19 @@
 # NodeJs Application Deployment Via Jenkins-CICD
 
+## Introduction :
+
+This project demonstrates the Continuous Integration and Continuous Deployment (CI/CD) pipeline setup for a Node.js application using Jenkins. The pipeline automates the entire process — from fetching the latest code from the Git repository, installing dependencies, running tests, building the application, and deploying it to the target server — ensuring faster, more reliable, and repeatable releases. This CI/CD pipeline reduces manual effort, minimizes deployment errors, and improves delivery speed — empowering development teams to focus more on writing code and less on managing releases.
 
 
-## prerequisite :
-- Jenkin-server Set up 
+
+## 🛠️ Prerequisites
+Before starting, ensure you have:
+- **Node.js** installed on your local and target server
+- **GitHub repository** containing your Node.js application
+- **Jenkins** installed and running on the CI server
+- **PM2** process manager installed on the target server
+- **SSH key-based authentication** between Jenkins server and deployment server
+- Basic knowledge of **shell scripting** and **Jenkins Pipelines**
 
 For jenkin set you can refer https://github.com/Vishu-Nargunde99/Jenkins-Set-Up
 
@@ -109,6 +119,40 @@ Here our credential is created
         - Script Path - Change Jenkinsfile To jenkinfile
 - Click on "Save".
 - Click on "Build Now"
+
+![project screenshot](/Images/build%20now%20success.PNG)
+
+Here build now is successfull. 
+
+![project screenshot](/Images/output.PNG)
+
+## Step 7 : Generate Automate code push 
+- Log in into your GitHub Account 
+- Go to your code repository of Nodejs
+- Click on setting 
+
+![projcet screenshot](/Images/webhook.PNG)
+
+- Click on webhook
+- Add webhook
+- payload URl
+```
+http://<jenkins-server-public-ip>:8080/github-webhook/
+
+Example
+http://54.81.24.101:8080/hithub-webhook/
+```
+- Add webhook
+- Now you can just chnage your code then add, commit and push code to your repo 
+
+!
+
+
+Congratualion!.....You can deployed your Nodejs application using CICD
+
+## Summary
+This project showcases a Node.js application deployment pipeline using Jenkins CI/CD. It automates code checkout from GitHub, dependency installation, testing, building, and deployment to a remote server with zero downtime using PM2. The setup includes GitHub webhooks for automatic builds, SSH-based secure deployment, and a Jenkins Pipeline (Jenkinsfile) for managing the process. This approach ensures faster, reliable, and repeatable deployments while minimizing manual intervention and reducing errors.
+
 
 
 
