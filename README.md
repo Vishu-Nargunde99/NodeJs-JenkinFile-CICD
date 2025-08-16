@@ -58,7 +58,7 @@ scp -i <key-file-name> <key-file-name> username@public-ip:defaultpath
 example :
 scp -i jenkins-file.pem jenkins-file.pem ubuntu@54.81.24.101:/home/ubuntu
 ```
-## Step 4 : 
+## Step 4 : Add Required Plugins.
 
 In the jenkins you have to install some plugins for build CICD pipeline Fr that you have to follow below steps 
 
@@ -150,7 +150,7 @@ http://54.81.24.101:8080/hithub-webhook/
 
 Congratualion!.....You can deployed your Nodejs application using CICD
 
-## Summary
+##  📄 Summary :
 This project showcases a Node.js application deployment pipeline using Jenkins CI/CD. It automates code checkout from GitHub, dependency installation, testing, building, and deployment to a remote server with zero downtime using PM2. The setup includes GitHub webhooks for automatic builds, SSH-based secure deployment, and a Jenkins Pipeline (Jenkinsfile) for managing the process. This approach ensures faster, reliable, and repeatable deployments while minimizing manual intervention and reducing errors.
 
 
